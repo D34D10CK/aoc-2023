@@ -32,10 +32,9 @@ def part2(lines):
     total = 0
     for line in lines:
         numbers = re.findall(rf"(?=({'|'.join(DIGITS.keys())}|\d))", line)
-        calibration_value = int(
+        total += int(
             DIGITS.get(numbers[0], numbers[0]) + DIGITS.get(numbers[-1], numbers[-1])
         )
-        total += calibration_value
 
     return total
 
