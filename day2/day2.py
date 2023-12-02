@@ -33,4 +33,4 @@ def part1_and_2(lines: list[str]) -> tuple[int, int]:
 
 part1, part2 = part1_and_2(read_input())
 print("Part 1:", part1)
-print("Part 1:", part2)
+print("Part 2:", part2)
