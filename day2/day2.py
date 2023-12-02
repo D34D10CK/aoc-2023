@@ -15,7 +15,7 @@ def is_possible(color_counts: dict[str, int]) -> bool:
     )
 
 
-def part1_and_2(lines: list[str]):
+def part1_and_2(lines: list[str]) -> tuple[int, int]:
     sum_of_game_ids = 0
     total_power = 0
     for game_id, line in enumerate(lines, start=1):
