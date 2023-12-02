@@ -14,12 +14,12 @@ DIGITS = {
 }
 
 
-def read_input():
+def read_input() -> list[str]:
     with open("input.txt") as f:
         return f.readlines()
 
 
-def part1(lines):
+def part1(lines: list[str]) -> int:
     total = 0
     for line in lines:
         numbers = re.findall(r"\d", line)
@@ -28,7 +28,7 @@ def part1(lines):
     return total
 
 
-def part2(lines):
+def part2(lines: list[str]) -> int:
     total = 0
     for line in lines:
         numbers = re.findall(rf"(?=({'|'.join(DIGITS.keys())}|\d))", line)
