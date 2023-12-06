@@ -20,8 +20,9 @@ def parse_input2(lines: list[str]) -> tuple[int, int]:
 
 
 def conmpute_num_ways_to_beat(time: int, distance: int) -> int:
-    min_time = 0.5 * (time - sqrt(time**2 - 4 * distance))
-    max_time = 0.5 * sqrt(time**2 - 4 * distance) + 0.5 * time
+    root_term = sqrt(time**2 - 4 * distance)
+    min_time = 0.5 * (time - root_term)
+    max_time = 0.5 * (root_term + time)
     return int(max_time) - int(min_time)
 
 
