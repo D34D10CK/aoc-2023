@@ -19,7 +19,7 @@ def parse_input2(lines: list[str]) -> tuple[int, int]:
     return time, distance
 
 
-def conmpute_num_ways_to_beat(time: int, distance: int) -> int:
+def compute_num_ways_to_beat(time: int, distance: int) -> int:
     root_term = sqrt(time**2 - 4 * distance)
     min_time = 0.5 * (time - root_term)
     max_time = 0.5 * (root_term + time)
@@ -29,14 +29,14 @@ def conmpute_num_ways_to_beat(time: int, distance: int) -> int:
 def part1(lines: list[str]) -> int:
     result = 1
     for time, distance in parse_input1(lines):
-        result *= conmpute_num_ways_to_beat(time, distance)
+        result *= compute_num_ways_to_beat(time, distance)
 
     return result
 
 
 def part2(lines: list[str]) -> int:
     time, distance = parse_input2(lines)
-    return conmpute_num_ways_to_beat(time, distance)
+    return compute_num_ways_to_beat(time, distance)
 
 
 print("Part 1:", part1(read_input()))
